@@ -1,0 +1,5 @@
+composer.phar
+/vendor/
+config.inc.php
+.*.swp
+.prompt_history
