@@ -1,13 +1,17 @@
 <?php
 $config = TypeHelper::getTypeConfig()[$this->type];
+$this->heading = $this->escape($config['name']) . ' / ' . $this->escape($this->type);
 ?>
 <?php $this->yield_start('content') ?>
-<h1 class="mt-4 mb-3"><?= $this->escape($config['name'] . ' / ' . $this->type) ?></h1>
-<ul class="nav nav-tabs">
-    <?php foreach ($this->features as $ftab => $fname) { ?>
-    <li class="nav-item">
-    <a class="nav-link <?= $this->if($ftab == $this->tab, 'active') ?>" href="/collection/list/<?= $this->type ?>/<?= $ftab ?>"><?= $this->escape($fname) ?></a>
-    </li>
+<ul class="nav nav-pills my-3">
+    <?php if (count($this->features) > 1) { ?>
+      <?php foreach ($this->features as $ftab => $fname) { ?>
+      <li class="nav-item">
+        <a class="nav-link <?= $this->if($ftab == $this->tab, 'active') ?>" href="/collection/list/<?= $this->type ?>/<?= $ftab ?>">
+          <?= $this->escape($fname) ?>
+        </a>
+      </li>
+      <?php } ?>
     <?php } ?>
 </ul>
 <?php if ($this->tab == 'table') { ?>
