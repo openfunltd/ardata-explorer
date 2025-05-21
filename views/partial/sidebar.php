@@ -1,7 +1,3 @@
-<?php
-//default sidebar active items value
-$sidebar_active_items = $this->sidebar_active_items ?? [];
-?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- brand logo -->
   <a href="/" class="brand-link">
@@ -13,14 +9,14 @@ $sidebar_active_items = $this->sidebar_active_items ?? [];
   <div class="sidebar">
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-header">一般</li>
+        <?php foreach (TypeHelper::getTypeConfig() as $key => $config) { ?>
         <li class="nav-item">
-          <?php $active_str = in_array('index', $sidebar_active_items) ? ' active' : ''; ?>
-          <a href="/" class="nav-link<?= $active_str ?>">
-            <i class="bi bi-speedometer2"></i>
-            <p class="ml-1">首頁</p>
+          <a href="/collection/list/<?= $key ?>" class="nav-link <?= $this->if($this->type== $key, 'active') ?>">
+            <i class="<?= $this->escape($config['icon']) ?>"></i>
+            <p class="ml-1"><?= $this->escape($config['name']) ?> / <?= $this->escape($key) ?></p>
           </a>
         </li>
+        <?php } ?>
       </ul>
   </div>
 </aside>

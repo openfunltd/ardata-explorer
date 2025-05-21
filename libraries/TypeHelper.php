@@ -6,9 +6,9 @@ class TypeHelper
     {
         //TODO Please fill-in the info of Type
         return [
-            'type_name' => [ //type name(API endpoint)
-                'name' => '', //displayname of the type which will be on page <h1>
-                'icon' => 'fas fa-fw fa-calendar-day',
+            'type' => [ //type (API endpoint)
+                'name' => 'displayname', //displayname of the type which will be on page <h1>
+                'icon' => 'bi bi-globe-asia-australia',
                 'cols' => [
                     //cols to display on collection 
                 ],
