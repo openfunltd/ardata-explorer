@@ -5,8 +5,7 @@ $sidebar_active_items = $this->sidebar_active_items ?? [];
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- brand logo -->
   <a href="/" class="brand-link">
-    <img src="/static/images/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-         style="opacity: .8">
+    <img src="/static/images/planet-earth-global.png" alt="Explorer Logo" class="brand-image">
     <span class="brand-text font-weight-light">Data Explorer</span>
   </a>
 
