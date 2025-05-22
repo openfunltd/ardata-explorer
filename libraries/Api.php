@@ -15,11 +15,7 @@ class Api
 
     public static function apiQuery($url, $reason)
     {
-        if (getenv('API_HOST')) {
-            $url = 'https://' . getenv('API_HOST') . $url;
-        } else {
-            $url = 'https://ly.govapi.tw/v2' . $url;
-        }
+        $url = 'https://' . getenv('API_HOST') . $url;
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
