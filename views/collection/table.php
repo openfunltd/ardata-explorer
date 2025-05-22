@@ -228,7 +228,7 @@ $(document).ready(function() {
             } else {
               label_dom.append($('<span class="form-check-label"></span>').text(bucket[agg_data.agg]));
             }
-            label_dom.append($('<span class="badge dark-text"></span>').text('(' + bucket.count + ')'));
+            label_dom.append($('<span class="badge text-dark"></span>').text('(' + bucket.count + ')'));
             dom.find('.card-body').append(label_dom);
           }
         }
