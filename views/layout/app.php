@@ -41,5 +41,36 @@
         </div>
       </section>
     </div>
+    <!-- Footer -->
+    <footer class="main-footer">
+      <!-- 本頁面使用 API -->
+      <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+          <div class="card card-dark">
+            <div class="card-header">
+              <h5 class="card-title">本頁面使用 API</h5>
+            </div>
+            <div class="card-body">
+              <ul id="api-log">
+                <?php foreach (Api::getLogs() as $log) { ?>
+                <li>
+                <a href="<?= $this->escape($log[0]) ?>" target="_blank"><?= $this->escape($log[1]) ?></a>
+                </li>
+                <?php } ?>
+              </ul>
+              <script id="tmpl-api-log" type="text/html">
+                <li>
+                  <a href="" target="_blank" class="link"></a>
+                </li>
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-end">
+        <strong>Powered by <a href="https://openfun.tw">歐噴有限公司(OpenFun Ltd.)</a></strong>
+      </div>
+    </footer>
   </div>
+  <?= $this->yield('body-load') ?>
 </body>
